@@ -12,8 +12,7 @@ const authenticate = (req, res, next) => {
         next();
     });
 };
-console.log(token)
-console.log(typeof authenticate);  // Should be 'function'
+
 
 
 module.exports = authenticate; // Ensure it's correctly exported
