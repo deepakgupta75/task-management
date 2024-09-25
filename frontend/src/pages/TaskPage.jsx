@@ -50,11 +50,14 @@ const TaskPage = () => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/tasks", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const response = await axios.get(
+          "https://task-management-ev3y.onrender.com/api/tasks",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
         setTasks(response.data);
       } catch (error) {
         console.error("Error fetching tasks:", error);
@@ -78,11 +81,14 @@ const TaskPage = () => {
 
   const confirmDeleteTask = () => {
     axios
-      .delete(`http://localhost:5000/api/tasks/${taskToDelete}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
+      .delete(
+        `https://task-management-ev3y.onrender.com/api/tasks/${taskToDelete}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
       .then(() => {
         setTasks((prevTasks) =>
           prevTasks.filter((task) => task._id !== taskToDelete)
@@ -105,11 +111,15 @@ const TaskPage = () => {
 
   const handleSaveTask = (updatedTask) => {
     axios
-      .put(`http://localhost:5000/api/tasks/${updatedTask._id}`, updatedTask, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
+      .put(
+        `https://task-management-ev3y.onrender.com/api/tasks/${updatedTask._id}`,
+        updatedTask,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
       .then((response) => {
         setTasks((prevTasks) =>
           prevTasks.map((task) =>

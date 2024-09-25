@@ -14,8 +14,8 @@ const Permit = ({ setUser }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const url = isLogin
-      ? "http://localhost:5000/api/auth/login"
-      : "http://localhost:5000/api/auth/signup";
+      ? "https://task-management-ev3y.onrender.com/api/auth/login"
+      : "https://task-management-ev3y.onrender.com/api/auth/signup";
     const userData = isLogin ? { email, password } : { name, email, password };
 
     try {
