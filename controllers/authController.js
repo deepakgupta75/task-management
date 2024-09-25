@@ -23,24 +23,24 @@ exports.signup = async (req, res) => {
       const token = jwt.sign({ id: user._id }, jwtSecret, { expiresIn: '2h' });
   
       // Create email transporter for sending the greeting message
-      const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-          user: process.env.EMAIL_USER,
-          pass: process.env.EMAIL_PASS,
-        },
-      });
+      // const transporter = nodemailer.createTransport({
+      //   service: 'gmail',
+      //   auth: {
+      //     user: process.env.EMAIL_USER,
+      //     pass: process.env.EMAIL_PASS,
+      //   },
+      // });
   
-      // Define the email options
-      const mailOptions = {
-        from: process.env.EMAIL_USER,
-        to: email,
-        subject: 'Welcome to Task Management System!',
-        text: `Hello ${name},\n\nThank you for registering at our task management system. We are excited to have you on board.\n\nBest regards,\nTask Management Team`,
-      };
+      // // Define the email options
+      // const mailOptions = {
+      //   from: process.env.EMAIL_USER,
+      //   to: email,
+      //   subject: 'Welcome to Task Management System!',
+      //   text: `Hello ${name},\n\nThank you for registering at our task management system. We are excited to have you on board.\n\nBest regards,\nTask Management Team`,
+      // };
   
       // Send the greeting email
-      await transporter.sendMail(mailOptions);
+      // await transporter.sendMail(mailOptions);
   
       // Respond with the token and user details
       res.status(201).json({
