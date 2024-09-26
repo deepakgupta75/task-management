@@ -33,7 +33,7 @@ Check out the live version of the app:
 
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/yourusername/task-management-system.git
+   git clone https://github.com/deepakgupta75/task-management.git
 
 
 
