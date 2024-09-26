@@ -36,19 +36,4 @@ Check out the live version of the app:
    git clone https://github.com/yourusername/task-management-system.git
 
 
-### **Backend Installation**
-
-1. **Navigate to the backend folder:**
-   ```bash
-   cd backend
-npm install
-
-### **Create a .env file for environment variables (e.g., database URI, JWT secret).**
-npm start
-
-
-
-
-
-
 
